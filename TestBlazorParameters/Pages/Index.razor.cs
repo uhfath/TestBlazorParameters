@@ -23,6 +23,7 @@ namespace TestBlazorParameters.Pages
 				var i = 0;
 				builder.OpenComponent(i++, typeof(SurveyPrompt));
 				builder.AddAttribute(i++, nameof(SurveyPrompt.Title), "test");
+				//builder.AddAttribute(i++, nameof(SurveyPrompt.TestEnum), TestEnum.Error);
 				builder.AddAttribute(i++, nameof(SurveyPrompt.OnTest), (Action)OnTest);
 				builder.CloseComponent();
 			});
