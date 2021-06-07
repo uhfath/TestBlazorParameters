@@ -1,0 +1,23 @@
+﻿<div>
+    <input @bind-value="Title" />
+    <br />
+
+    <button @onclick="OnTestClicked">Test</button>
+	<br />
+	<span>@Title</span>
+</div>
+
+@code {
+	[Parameter]
+	public string Title { get; set; }
+
+	[Parameter]
+	public Action OnTest { get; set; }
+
+	private void OnTestClicked()
+	{
+		Console.WriteLine("Child pre: {0}", Title);
+		OnTest();
+		Console.WriteLine("Child post: {0}", Title);
+	}
+}
